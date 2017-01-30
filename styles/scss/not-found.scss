@@ -1,0 +1,30 @@
+@import 'general';
+@import 'header-nav';
+@import 'footer';
+
+.not-found {
+	display: flex;
+	padding: 15px 0 30px;
+    align-items: center;
+    text-align: center;
+}
+
+.not-found-heading {
+	font-size: 180px;
+	text-transform: uppercase;
+
+	@include respond-to(tablet) {
+		font-size: 150px;
+	}
+}
+
+.not-found-text {
+	font-size: 36px;
+
+	@include respond-to(tablet) {
+		font-size: 30px;
+	}
+}
+
+
+

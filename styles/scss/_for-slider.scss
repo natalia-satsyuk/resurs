@@ -1,0 +1,65 @@
+//FOR SLIDER
+// (arrows)
+.slick-prev {
+	content: "";
+	width: 19px;
+	height: 17px;
+	position: absolute;
+	top: 7%;
+    left: 47%;
+	background: url("../../images/arrow-up.png") no-repeat center;
+	z-index: 1;
+
+	@include respond-to(tablet) {
+		top: 54%;
+		left: 3%;
+		background: url("../../images/arrow-left.png") no-repeat center;
+	}
+}
+
+.slick-next {
+	content: "";
+	width: 19px;
+	height: 17px;
+	position: absolute;
+	top: 110%;
+    right: 47%;
+	background: url("../../images/arrow-down.png") no-repeat center;
+	z-index: 1;
+
+	@include respond-to(tablet) {
+		top: 54%;
+		right: 3%;
+		background: url("../../images/arrow-right.png") no-repeat center;
+	}
+}
+
+.windows-slider-wrap {
+	.slick-prev,
+	.slick-next {
+		top: 51%;
+	}
+}
+
+.slick-prev:before {
+  content: " ";
+}
+
+.slick-prev:before[dir="rtl"] {
+  content: " ";
+}
+
+.slick-next:before {
+  content: " ";
+}
+.slick-next:before[dir="rtl"] {
+  content: " ";
+}
+
+// (other)
+.slick-slide img {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+

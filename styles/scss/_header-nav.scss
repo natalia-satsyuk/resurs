@@ -1,0 +1,162 @@
+//HEADER
+.header {
+	font-size: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+// .header-item {
+// 	display: inline-block;
+// }
+
+.header-logo {
+	//width: 37%;
+
+	@include respond-to(tablet) {
+		width: 50%;
+	}
+
+	img {
+		@include respond-to(mobile) {
+			width: 85%;
+		}
+	}
+}
+
+.header-address {
+	//width: 37%;
+	
+	@include respond-to(desktop) {
+		padding: 0 30px;
+	}
+
+	@include respond-to(tablet) {
+		display: none;
+	}
+}
+
+.header-text {
+	font-size: 19px;
+	text-align: center;
+}
+
+.header-call {
+	//width: 27%;
+	text-align: center;
+
+	@include respond-to(tablet) {
+		width: 50%;
+		padding-left: 12%;
+	}
+
+	@include respond-to(mobile) {
+		padding-left: 3%;
+	}
+}
+
+.heading-call {
+	@extend .heading-second;
+
+	@include respond-to(tablet) {
+		font-size: 19px;
+	}
+
+	@include respond-to(mobile) {
+		text-align: center;
+	}
+}
+
+.header-button {
+	@extend .button;
+	width: 220px;
+
+	@include respond-to(tablet) {
+		width: 142px;
+		padding: 6px 7px;
+		margin-top: 5px;
+		font-size: 16px;
+	}
+
+	@include respond-to(mobile) {
+		width: 132px;
+	}
+}
+//end of HEADER
+
+//NAV
+nav {
+	border-bottom: 1px solid #C56B0B;
+	background-color: $color-main;
+}
+
+.nav-container {
+	position: relative; // for pop-up menu
+
+	@include respond-to(desktop) {
+		padding: 20px 0;
+	}
+}
+
+.pop-up-menu {
+	display: none;
+
+	@include respond-to(desktop) {
+		display: block; //to make visible
+		position: absolute;
+		top: 5px;
+		font-size: 30px;
+	    right: 20px;
+	    color: white;
+	    cursor: pointer;
+	}	
+}
+
+.nav-list {
+	display: flex;
+	justify-content: space-around;
+
+	@include respond-to(desktop) {
+		display: none;
+		// justify-content: flex-end;
+		// flex-direction: column;
+		position: absolute;
+		width: 100%;
+		top: 40px;
+		right: 0;
+		background-color: rgba(255,132,0,0.9);
+		z-index: 2;
+	}
+}
+
+.nav-list-item {
+	@include respond-to(desktop) {
+		padding: 15px;
+		text-align: right;
+	}
+
+	&:after {
+		content: "\2022";
+		display: inline;
+		padding: 0 17px;
+		font-size: 22px;
+		color: white;
+
+		@include respond-to(desktop) {
+			content: none;
+		}
+	}
+
+	&:last-child {
+		&:after {
+			content: none;
+		}
+	}
+}	
+
+.nav-list-link {
+	font-size: 20px;
+	color: white;
+	text-transform: uppercase;
+}
+// end of NAV

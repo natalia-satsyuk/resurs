@@ -1,0 +1,398 @@
+@import '../scss/general';
+@import '../scss/pop-up-certificate';
+@import '../scss/for-slider';
+@import '../scss/header-nav';
+@import '../scss/footer';
+@import '../scss/checkbox';
+
+//BANNER
+.banner {
+	position: relative; //for positioning form
+	@include respond-to(tablet){
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+}
+
+.banner-slider-block {
+	border: 1px solid white;
+}
+
+.banner-slider-item {
+ 	margin-left: -5%;
+
+ 	@include respond-to(wide) {
+		margin-left: -3%;
+ 	}
+
+ 	@include respond-to(desktop) {
+		margin-left: -2.5%;
+ 	}
+
+ 	@include respond-to(tablet) {
+		img {
+			height: 450px;
+		}
+ 	}
+
+ 	@include respond-to(mobile) {
+ 		margin-left: -3%; 
+
+		img {
+			height: 520px;
+		}
+ 	}
+}
+
+.banner-form {
+	position: absolute;
+	bottom: 9%;
+	left: 14%;
+	padding: 25px 65px 15px;
+	width: 71%;
+	background: url("../../images/bg-form.png") no-repeat;
+	background-size: 100% 100%;
+
+ 
+	@include respond-to(tablet) {
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		padding: 15px;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		background-image: none;
+		background-color: rgba(255,255,255,.8);
+	}
+
+	@include respond-to(mobile) {
+		padding: 15px 10px;
+	}
+}
+
+.form-heading {
+	@extend .heading;
+
+	@include respond-to(desktop) {
+		font-size: 23px;
+	}
+}
+
+.banner-form-input {
+	width: 24%;
+	padding: 12px 10px;
+	background-color: white;
+	border: 1px solid #4e5659;
+	font-size: 15px;
+	vertical-align: middle;
+
+	@include respond-to(desktop) {
+		padding: 12px 5px;
+ 	}
+
+	@include respond-to(tablet) {
+		width: 100%;
+		margin: 5px 0;
+		padding: 12px 10px;
+	}
+
+	&[type="submit"] {
+		@extend .button;
+		width: 24%;
+		padding: 6px 15px;
+		color: black;
+
+		@include respond-to(desktop) {
+			padding: 10.5px 10px;
+			font-size: 18px;
+		}
+
+		@include respond-to(tablet) {
+			padding: 6px 15px;
+			width: 100%;
+			font-size: 25px;
+			order: 1;
+		}
+	}
+
+	&::-webkit-input-placeholder {
+		font: 20px pfdintextcondpro-regular;
+		color: #2b2a28;
+		text-transform: uppercase;
+	}
+
+	&::-moz-placeholder {
+		font: 20px pfdintextcondpro-regular;
+		color: #2b2a28;
+		text-transform: uppercase;
+	}         
+	&:-moz-placeholder {
+		font: 20px pfdintextcondpro-regular;
+		color: #2b2a28;
+		text-transform: uppercase;
+	}          
+	&:-ms-input-placeholder {     
+		font: 20px pfdintextcondpro-regular;
+		color: #2b2a28;
+		text-transform: uppercase;
+	}
+}
+
+.banner-form-text {
+	margin: 10px 0;
+	font-size: 16px;
+	color: #2b2a28;
+	text-transform: uppercase;
+}
+
+.banner-text {
+	position: relative;
+	top: 38px;
+	padding-left: 0;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	text-align: right;
+
+	@include respond-to(tablet) {
+		position: static;
+		padding: 30px 0;
+		text-align: center;
+		color: black;
+	}
+}
+
+.banner-link {
+	@extend .banner-form-text;
+	color: white;
+	text-decoration: underline;
+
+	@include respond-to(tablet) {
+		color: black;
+	}
+}
+//end of BANNER
+
+//WORK
+.work {
+	padding: 50px 0 30px;
+	border-top: 3px solid $color-bg;
+
+	@include respond-to(tablet) {
+		border-top: none;
+	}
+
+	@include respond-to(mobile) {
+		padding-top: 25px;
+	}
+}
+.work-container {
+	@include respond-to(tablet) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.work-offer {
+	display: inline-block;
+	vertical-align: top;
+	width: 65%;
+
+	@include respond-to(tablet) {
+		width: 100%;
+	}
+}
+
+.work-offer-item {
+	display: flex;
+	align-items: center;
+	padding-bottom: 55px;
+
+	@include respond-to(mobile) {
+		padding-bottom: 40px;
+	}
+}
+
+.work-offer-image {
+	@include respond-to(desktop) {
+		width: 30%;
+	}
+
+	@include respond-to(tablet) {
+		display: none;
+	}
+}
+
+.work-offer-about {
+	width: 70%;
+	display: inline-block;
+	padding: 0 15px;
+
+	@include respond-to(tablet) {
+		width: 100%;
+	}
+
+	@include respond-to(mobile) {
+		padding: 0;
+		text-align: justify;
+	}
+}
+
+.work-offer-text {
+	padding: 10px 0 20px;
+	font-size: 18px;
+}
+
+.work-goods {
+	@extend .work-offer;
+	width: 34%;
+	text-align: center;
+
+	@include respond-to(tablet) {
+		width: 100%;
+		order: -1;
+	}
+}
+
+.work-goods-certif {
+	padding-bottom: 100px;
+
+	@include respond-to(desktop) {
+		padding-bottom: 30px;
+	}
+}
+
+.work-goods-slider {
+	@include respond-to(tablet) {
+		margin-bottom: 40px;
+	}
+}
+
+.work-slider-wrap {
+	padding-top: 60px;
+
+	@include respond-to(mobile) {
+		padding-top: 0;
+	}
+}
+
+.work-goods-heading {
+	@extend .heading;
+	padding-bottom: 30px;
+
+	@include respond-to(mobile) {
+		padding-top: 30px;
+	}
+}
+
+.work-goods-image {
+	padding: 7px 0;
+}
+
+.slider-wrap {
+	margin-top: 30px;
+	padding: 5px 0;
+
+	@include respond-to(mobile) {
+		margin-top: 0;
+	}
+}
+//end of WORK
+
+//CUSTOMERS
+.customers {
+	padding: 35px 0;
+	background-color: $color-bg;
+	text-align: center;
+
+	@include respond-to(tablet) {
+		padding-bottom: 0;
+	}
+}
+
+.customers-text {
+	padding: 25px 7px 30px;
+	font-size: 22px;
+	font-family: PFDinCondensedThinItalic;
+}
+
+.customers-list {
+	display: flex;
+	justify-content: space-around;
+
+	@include respond-to(tablet) {
+		padding: 0;
+		margin-bottom: -15px;
+		flex-direction: column;
+	}
+}
+
+.customers-list-item {
+	position: relative; //for active-class
+	display: inline-block;
+	margin: 0 10px;
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: pointer;
+
+	&:first-child {
+		@include respond-to(tablet) {
+			border-top: 1px solid black;
+		}
+	}
+
+	@include respond-to(tablet) {
+		padding: 20px 40px 20px 5px;
+		margin: 0 -15px;
+		border-bottom: 1px solid black;
+		background: url("../../images/down.png") 97% center no-repeat;
+	}
+
+	@include respond-to(mobile) {
+		margin: 0 -7px;
+	}
+}
+
+.active {
+	
+	@include respond-to(tablet) {
+		content: none;
+		background: url("../../images/up.png") 97% 20px no-repeat;
+	}
+}
+//end of CUSTOMERS
+
+//CUSTOMERS-LOGO
+.customers-logo-container {
+	min-height: 272px; //for ie to show this correct
+}
+
+.customers-logo-list {
+	display: none;
+	font-size: 0;
+	text-align: center;
+	background-color: white;
+
+	@media screen and (max-width: 768px) {
+		margin: 15px -40px -20px;
+		border-top: 1px solid black;
+	}
+}
+
+.customers-logo-list-item {
+	display: inline-block;
+	width: 33%;
+	padding: 15px 20px;
+	vertical-align: middle;
+
+	@include respond-to(tablet) {
+		width: 100%;
+	}
+} 
+//end of CUSTOMERS-LOGO
+
+
+
+

@@ -1,0 +1,127 @@
+$break-small: 480px;
+$break-medium: 768px;
+$break-large: 992px;
+$break-wide: 1366px;
+
+@mixin respond-to($media) {
+  @if $media == mobile {   // <=480
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+
+  @else if $media == tablet { // <=768
+    @media only screen and (max-width: $break-medium) { @content; }
+  }
+
+  @else if $media == desktop { // <=992
+    @media only screen and (max-width: $break-large) { @content; }
+  }
+
+  @else if $media == wide { // <=1366
+    @media only screen and (max-width: $break-wide) { @content; }
+  }
+}
+
+$color-main: #ff8400;
+$color-bg: #fdc029;
+
+html {
+	height: 100%; 
+}
+
+body {
+	height: 100%;
+	display: flex;  // for sticky footer
+	flex-direction: column;  // for sticky footer
+	font-family: pfdintextcondpro-regular;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+//GENERAL STYLES
+.content {
+	flex-grow: 1; // for sticky footer
+}
+
+.container {
+	max-width: 1024px;
+	width: 100%;
+	padding: 15px;
+	margin: 0 auto;
+
+	@include respond-to(mobile) {
+		padding: 7px;
+	}
+}
+
+.heading {
+	font-size: 35px;
+	text-transform: uppercase;
+}
+
+.heading-second {
+	@extend .heading;
+	font-size: 30px;
+
+	@include respond-to(mobile) {
+		text-align: left;
+	}
+}
+
+.button {
+	display: inline-block;
+	width: 195px;
+	border: none;
+	padding: 10px 15px;
+	font: 25px pfdintextcondpro-regular;
+	text-align: center;
+	text-transform: uppercase;
+	background-color: $color-main;
+	color: white;
+	cursor: pointer;
+	transition: 1s;
+
+	&:hover {
+		background-color: #ff4e00;
+	}
+}
+
+.image-round {
+	border: 5px solid rgba(255, 255, 255, 0.46);
+	border-radius: 50%;
+	box-shadow: 0 0 11px rgba(0, 0, 0, 0.14);
+
+	@include respond-to(mobile) {
+		width: 70%;
+	}
+}
+
+.active {
+	font-weight: normal !important;
+
+	&:before {
+		content: "";
+		position: absolute;
+		bottom: -73px;
+		left: 50%;
+		margin-left: -23.5px;
+		width: 47px;
+		height: 23.5px;
+		background: url("../../images/active.png") 0 23.5px;
+
+		@include respond-to(tablet) {
+			content: none;
+			background: url("../../images/down.png") 3% 97% center no-repeat;
+		}
+	}
+}
+// end of GENERAL STYLES
